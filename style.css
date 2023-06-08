@@ -1,0 +1,29 @@
+*{
+    background-color: black;
+    color:aliceblue;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+input{
+   border:none;
+   outline: none;
+    background: transparent;
+}
+button{
+    border:none;
+   outline: none;
+   background-color: rgb(65, 75, 84);
+    border-radius: 40px;
+}
+ul li{
+    list-style: none;
+    padding: 12px;
+}
+ul li.task{
+    
+    text-decoration: line-through;
+}
