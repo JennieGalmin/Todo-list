@@ -6,13 +6,25 @@ const inputBox = document.getElementById("myInput");
 const list = document.getElementById("myUL");
 const addButton = document.getElementById("btn");
 
-function addTask{
-if {
-let li = document.createElement(li);
+function addTask(){
+if(inputBox.value === ""){
+    alert("please enter task");
+} else {
 
+let li = document.createElement("li");
+li.innerHTML = inputBox.value;
+list.appendChild(li);
+let span  = document.createElement("span");
+span.innerHTML = "\u00d7";
+li.appendChild(span);
 }
+inputBox.value = "";
+}
+addButton.addEventListener("click", addTask);
 
-let newTask = document.createElement("SPAN");
+
+
+/*let newTask = document.createElement("SPAN");
     let newText = document.createTextNode("");
 }
 
@@ -29,15 +41,3 @@ let newTask = document.createElement("SPAN");
 .then((data)=> console.log(data));
 });
 */
-
-    
-
-
-
- 
-
-
-
-
-
-   
