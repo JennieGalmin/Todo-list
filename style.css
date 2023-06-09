@@ -23,12 +23,11 @@ ul li{
     list-style: none;
     padding: 12px;
 }
-ul li.task{
-    
-    text-decoration: line-through;
-}
 li {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+}
+.task{
+    text-decoration: line-through;
 }

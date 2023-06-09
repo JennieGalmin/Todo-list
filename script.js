@@ -12,12 +12,19 @@ if(inputBox.value === ""){
 } else {
 
 let li = document.createElement("li");
-li.innerHTML = inputBox.value;
+li.textContent = inputBox.value;
 list.appendChild(li);
+
+
+li.addEventListener("click", function(){
+    li.classList.toggle("task"); 
+
+ });
 
 let span  = document.createElement("span");
 span.innerHTML = "\u00d7";
 li.appendChild(span);
+
 
 span.addEventListener("click", function(){
     li.remove();
@@ -26,8 +33,8 @@ span.addEventListener("click", function(){
 
 inputBox.value = "";
 };
-addButton.addEventListener("click", addTask);
 
+addButton.addEventListener("click", addTask);
 
 
 
