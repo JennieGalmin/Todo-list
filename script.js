@@ -3,36 +3,45 @@
 .then(console.log);*/
 
 const inputBox = document.getElementById("myInput");
-const list = document.getElementById("myUL");
+const list = document.getElementById("myDl");
 const addButton = document.getElementById("btn");
+const descriptionBox = document.getElementById("descriptionInput");
 
 function addTask(){
 if(inputBox.value === ""){
     alert("Please enter task");
 } else {
 
-let li = document.createElement("li");
-li.textContent = inputBox.value;
-list.appendChild(li);
+let dt = document.createElement("dt");
+dt.textContent = inputBox.value;
+list.appendChild(dt);
+
+let dd = document.createElement("dd");
+dd.textContent = descriptionBox.value;
+list.appendChild(dd);
+
+let removeButton = document.createElement("span");
+removeButton.innerHTML = "\u00d7";
+dd.appendChild(removeButton); 
 
 
-li.addEventListener("click", function(){
-    li.classList.toggle("task"); 
 
- });
+dt.addEventListener("click", function(){
+    dt.classList.toggle("task"); 
+    dd.classList.toggle("taskDesc");
 
-let span  = document.createElement("span");
-span.innerHTML = "\u00d7";
-li.appendChild(span);
-
-
-span.addEventListener("click", function(){
-    li.remove();
 });
-};
+removeButton.addEventListener("click", function(){
+   dt.remove();
+    dd.remove();
+});
+
+}
 
 inputBox.value = "";
-};
+descriptionBox.value = "";
+
+}
 
 addButton.addEventListener("click", addTask);
 
@@ -43,20 +52,3 @@ addButton.addEventListener("click", addTask);
 
 
 
-/*let newTask = document.createElement("SPAN");
-    let newText = document.createTextNode("");
-}
-
-
-    newTask.appendChild(newText);
-    document.body.appendChild(newTask);
-
-
-/*document.addEventListener("click", function(event){
-     if(!event.target.matches("#btn")) return;
-
-    fetch('https://dummyjson.com/todos')
-.then(res => res.json())
-.then((data)=> console.log(data));
-});
-*/
