@@ -25,15 +25,32 @@ removeButton.innerHTML = "\u00d7";
 dd.appendChild(removeButton); 
 
 let dateSpan = document.createElement("span");
-let currentDate = new Date();
-let dateString = currentDate.toLocaleString();
-dateSpan.textContent = dateString;
+let createdDate = new Date();
+let dateString = createdDate.toLocaleString();
+dateSpan.textContent = "created:" + dateString;
 dt.appendChild(dateSpan);
+
+let doneDate = document.createElement("span");
+doneDate.classList.add("Done:");
 
 
 dt.addEventListener("click", function(){
     dt.classList.toggle("task"); 
     dd.classList.toggle("taskDesc");
+
+    let completionDate = document.createElement("span");
+    completionDate.classList.add("completion-date");
+
+    if(dt.classList.contains("task")){
+       
+    let completedDate = new Date();
+    let newDate = completedDate.toLocaleString();
+    completionDate.textContent = "completed:" + newDate;
+    dd.appendChild(completionDate);
+     } else {
+        completionDate.textContent = "";
+     }
+
 });   
 
 
