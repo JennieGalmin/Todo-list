@@ -24,13 +24,20 @@ let removeButton = document.createElement("span");
 removeButton.innerHTML = "\u00d7";
 dd.appendChild(removeButton); 
 
+let dateSpan = document.createElement("span");
+let currentDate = new Date();
+let dateString = currentDate.toLocaleString();
+dateSpan.textContent = dateString;
+dt.appendChild(dateSpan);
 
 
 dt.addEventListener("click", function(){
     dt.classList.toggle("task"); 
     dd.classList.toggle("taskDesc");
+});   
 
-});
+
+
 removeButton.addEventListener("click", function(){
    dt.remove();
     dd.remove();
